@@ -1,0 +1,28 @@
+{{ define "comments" }}
+{{ template "header" }}
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {{ range . }}
+        <div class="alert alert-danger">
+          <h2>{{ .C1 }}</h2>
+          <p> {{ .C2 }}</p>
+          <p> {{ .C3 }}</p>
+          <p> {{ .C4 }}</p>  
+          <a href="/post/{{ .Id }}" class="btn btn-danger"></a>
+        </div>
+        {{ else }}
+        
+        <p class="lead"> Statei net</p>
+        {{ end }}
+
+       
+
+        
+
+      </div>
+    </div>
+  </div>
+{{ end }} 

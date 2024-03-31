@@ -1,0 +1,65 @@
+{{ define "show" }}
+{{ template "header" }}
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="cover-heading">{{ .Title }}</h1>
+        <p class="lead">{{ .FullText }}</p>
+        <p class="lead">{{ .C4 }}</p>
+        <p class="lead text-body-secondary">show.html and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <a href="/" class="btn btn-lg btn-secondary">Nazad</a>
+        <p>
+          <a href="#" class="btn btn-primary my-2">Main call to action</a>
+          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        </p>
+
+        <main role="main" class="inner cover">
+          <h1 class="cover-heading">Комментарий</h1>
+          <form action="/save_comment" method="post">
+          <input type="text" name="c1" id="title" placeholder="Введите" class="form-control"><br>
+          <textarea name="c2" id="c2" class="form-control" placeholder="введите анонс"></textarea><br>
+          <textarea name="c3" id="c3" class="form-control" placeholder="введите текст"></textarea><br>
+          <textarea name="c4" id="c4" class="form-control" placeholder="введите текст"></textarea><br>
+          <button class="btn btn-warning"> Добавить</button>
+          </form>
+        </main>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {{ range . }}
+        <div class="alert alert-danger">
+          <h2>{{ .Title }}</h2>
+          <p> {{ .Anons }}</p>
+          <a href="/post/{{ .Id }}" class="btn btn-danger"></a>
+          <p> {{ .C1 }}</p>
+          <p> {{ .C2 }}</p>
+        </div>
+        {{ else }}
+        
+        <p class="lead"> Statei net</p>
+        {{ end }}
+
+       
+
+        
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+  {{ template "footer" }}
+  {{ end }} 
+
+ 
+
+
+

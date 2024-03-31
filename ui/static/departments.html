@@ -1,0 +1,18 @@
+{{ define "departments" }}
+{{ template "header" }}
+<main role="main" class="inner cover">
+    <h1 class="cover-heading">Напишите свое заявление</h1>
+    <form action="/savezayava" method="post">
+    <input type="text" name="dep_name" id="dep_name" placeholder="Про что?" class="form-control"><br>
+    <textarea name="staff_quantity" id="staff_quantity" class="form-control" placeholder="Введите текст полностью со всеми подробностями"></textarea><br>
+    <button class="btn btn-warning"> Отправить</button>
+    </form>
+  </main>
+
+  {{ template "footer" }}
+  {{ end }} 
+
+ 
+
+
+
